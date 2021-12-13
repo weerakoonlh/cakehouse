@@ -32,9 +32,11 @@
                 <li><a href="pages/account.html">My Account</a></li>
               </ul>
             </nav>
-            <a href="pages/cart.html">
-              <img src="images/website/shoppingCart.png" class="cartLogo" />
-            </a>
+            <img
+              src="images/website/shoppingCart.png"
+              class="cartLogo"
+              onclick="showCart()"
+            />
             <img
               src="images/website/Menu.png"
               class="menu-icon"
@@ -72,6 +74,43 @@
         </div>
       </div>
     </div>
+
+    <!-- Cart -->
+    <div class="cart-overlay">
+      <div class="cart">
+        <span class="close-cart">
+          <span
+            class="iconify"
+            data-icon="fa-regular:window-close"
+            onclick="closeCart()"
+          ></span>
+        </span>
+        <h2>My Cart</h2>
+        <div class="cart-content">
+          <!-- Cart Item-->
+          <div class="cart-item">
+            <img
+              src="images/Birthday/Chocolate BD 1.jpg"
+              alt=""
+              width="100px"
+            />
+            <div class="col-2">
+              <h4>Birthday Cake</h4>
+              <h5>SEK 350.00</h5>
+            </div>
+          </div>
+
+          <!-- End of Cart Item-->
+        </div>
+        <div class="cart-footer">
+          <h3>My Total: SEK <span class="cart-total">350</span></h3>
+          <button class="clear-cart banner-btn" onclick="clear_cart()">
+            Clear Cart
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End of Cart -->
 
     <!--Featured Products-->
     <div class="small-container">
@@ -348,6 +387,30 @@
         } else {
           menuItems.style.maxHeight = "0px";
         }
+      }
+      //Javascript for Show Cart
+      function showCart() {
+        document
+          .querySelector(".cart-overlay")
+          .classList.add("transparentCart");
+        document.querySelector(".cart").classList.add("showCart");
+      }
+
+      function closeCart() {
+        document
+          .querySelector(".cart-overlay")
+          .classList.remove("transparentCart");
+        document.querySelector(".cart").classList.remove("showCart");
+      }
+
+      function clear_cart() {
+        document.querySelector(".cart-item>img").src = "";
+        document.querySelector(".cart-item>div>h4").innerHTML = "";
+        document.querySelector(".cart-item>div>h5").innerHTML = "";
+        document.querySelector(".cart-total").innerHTML = "0";
+        document
+          .querySelector(".cart-item>img")
+          .classList.add("cart-img-remove");
       }
     </script>
   </body>
