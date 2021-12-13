@@ -388,7 +388,8 @@ form a {
 }
 
 /* Shopping Cart */
-.cart-overlay {
+
+/*.cart-overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -398,7 +399,7 @@ form a {
   background: #ffd6d6;
   z-index: 2;
   visibility: hidden;
-}
+}*/
 
 .cart {
   position: fixed;
@@ -430,6 +431,27 @@ form a {
 .close-cart .iconify {
   width: 30px;
   height: 30px;
+}
+
+.banner-btn {
+  padding: 10px 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  background: #ff523b;
+  color: #fff;
+  border: 1px solid #f09d51;
+  transition: 1s;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.banner-btn:hover {
+  background: transparent;
+  color: #333;
+  /*transform: translateY(-5px);
+  transition: transform (1s);*/
 }
 
 /* Media Query for Menu  for 800px*/
